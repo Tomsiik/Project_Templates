@@ -1,0 +1,9 @@
+stm32l4xx_ll_usart.h:3093:26:LL_USART_IsActiveFlag_RXNE	16	static
+stm32l4xx_ll_usart.h:3135:26:LL_USART_IsActiveFlag_TXE	16	static
+stm32l4xx_ll_usart.h:4521:25:LL_USART_ReceiveData8	16	static
+stm32l4xx_ll_usart.h:4544:22:LL_USART_TransmitData8	16	static
+tm_USART.c:15:6:USART_putByte	16	static
+tm_USART.c:20:6:USART_printf	24	static
+tm_USART.c:26:6:USART_putBuffer	32	static
+tm_USART.c:32:14:USART_Available	16	static
+tm_USART.c:42:9:USART_ReadByte	16	static

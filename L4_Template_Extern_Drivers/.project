@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>L4_Template_Extern_Drivers</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+			<triggers>clean,full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.ScannerConfigBuilder</name>
+			<triggers>full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>Drivers</name>
+			<type>2</type>
+			<location>D:/Tomas-veci/STM32/Libraries,Templates/Drivers/Family L4/Drivers</location>
+		</link>
+		<link>
+			<name>TM-API</name>
+			<type>2</type>
+			<location>D:/Tomas-veci/STM32/Libraries,Templates/Drivers/TM-API</location>
+		</link>
+	</linkedResources>
+</projectDescription>
