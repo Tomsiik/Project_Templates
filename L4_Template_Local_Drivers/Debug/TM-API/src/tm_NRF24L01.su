@@ -1,5 +1,5 @@
-stm32l4xx_ll_gpio.h:964:22:LL_GPIO_SetOutputPin	16	static
-stm32l4xx_ll_gpio.h:993:22:LL_GPIO_ResetOutputPin	16	static
+stm32l4xx_ll_gpio.h:957:22:LL_GPIO_SetOutputPin	16	static
+stm32l4xx_ll_gpio.h:986:22:LL_GPIO_ResetOutputPin	16	static
 tm_NRF24L01.c:24:6:NRF24_CE_Set	8	static
 tm_NRF24L01.c:32:6:NRF24_CE_Reset	8	static
 tm_NRF24L01.c:43:6:NRF24_TXADDR_Set	16	static

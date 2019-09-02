@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * @file      startup_stm32l433xx.s
+  * @file      startup_stm32l412xx.s
   * @author    MCD Application Team
-  * @brief     STM32L433xx devices vector table for GCC toolchain.
+  * @brief     STM32L412xx devices vector table for GCC toolchain.
   *            This module performs:
   *                - Set the initial SP
   *                - Set the initial PC == Reset_Handler,
@@ -15,29 +15,13 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; COPYRIGHT(c) 2017 STMicroelectronics</center></h2>
+  * <h2><center>&copy; Copyright (c) 2018 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * Redistribution and use in source and binary forms, with or without modification,
-  * are permitted provided that the following conditions are met:
-  *   1. Redistributions of source code must retain the above copyright notice,
-  *      this list of conditions and the following disclaimer.
-  *   2. Redistributions in binary form must reproduce the above copyright notice,
-  *      this list of conditions and the following disclaimer in the documentation
-  *      and/or other materials provided with the distribution.
-  *   3. Neither the name of STMicroelectronics nor the names of its contributors
-  *      may be used to endorse or promote products derived from this software
-  *      without specific prior written permission.
-  *
-  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
   *
   ******************************************************************************
   */
@@ -178,11 +162,11 @@ g_pfnVectors:
 	.word	DMA1_Channel5_IRQHandler
 	.word	DMA1_Channel6_IRQHandler
 	.word	DMA1_Channel7_IRQHandler
-	.word	ADC1_IRQHandler
-	.word	CAN1_TX_IRQHandler
-	.word	CAN1_RX0_IRQHandler
-	.word	CAN1_RX1_IRQHandler
-	.word	CAN1_SCE_IRQHandler
+	.word	ADC1_2_IRQHandler
+	.word	0
+	.word	0
+	.word	0
+	.word	0
 	.word	EXTI9_5_IRQHandler
 	.word	TIM1_BRK_TIM15_IRQHandler
 	.word	TIM1_UP_TIM16_IRQHandler
@@ -209,13 +193,13 @@ g_pfnVectors:
 	.word	0
 	.word	0
 	.word	0
-	.word	SDMMC1_IRQHandler
-	.word	0
-	.word	SPI3_IRQHandler
 	.word	0
 	.word	0
-	.word	TIM6_DAC_IRQHandler
-	.word	TIM7_IRQHandler
+	.word	0
+	.word	0
+	.word	0
+	.word	TIM6_IRQHandler
+	.word	0
 	.word	DMA2_Channel1_IRQHandler
 	.word	DMA2_Channel2_IRQHandler
 	.word	DMA2_Channel3_IRQHandler
@@ -227,18 +211,18 @@ g_pfnVectors:
 	.word	COMP_IRQHandler
 	.word	LPTIM1_IRQHandler
 	.word	LPTIM2_IRQHandler
-	.word	USB_IRQHandler
+	.word	0
 	.word	DMA2_Channel6_IRQHandler
 	.word	DMA2_Channel7_IRQHandler
 	.word	LPUART1_IRQHandler
 	.word	QUADSPI_IRQHandler
 	.word	I2C3_EV_IRQHandler
 	.word	I2C3_ER_IRQHandler
-	.word	SAI1_IRQHandler
 	.word	0
-	.word	SWPMI1_IRQHandler
+	.word	0
+	.word	0
 	.word	TSC_IRQHandler
-	.word	LCD_IRQHandler
+	.word	0
 	.word	0
 	.word	RNG_IRQHandler
 	.word	FPU_IRQHandler
@@ -334,20 +318,8 @@ g_pfnVectors:
 	.weak	DMA1_Channel7_IRQHandler
 	.thumb_set DMA1_Channel7_IRQHandler,Default_Handler
 
-	.weak	ADC1_IRQHandler
-	.thumb_set ADC1_IRQHandler,Default_Handler
-
-	.weak	CAN1_TX_IRQHandler
-	.thumb_set CAN1_TX_IRQHandler,Default_Handler
-
-	.weak	CAN1_RX0_IRQHandler
-	.thumb_set CAN1_RX0_IRQHandler,Default_Handler
-
-	.weak	CAN1_RX1_IRQHandler
-	.thumb_set CAN1_RX1_IRQHandler,Default_Handler
-
-	.weak	CAN1_SCE_IRQHandler
-	.thumb_set CAN1_SCE_IRQHandler,Default_Handler
+	.weak	ADC1_2_IRQHandler
+	.thumb_set ADC1_2_IRQHandler,Default_Handler
 
 	.weak	EXTI9_5_IRQHandler
 	.thumb_set EXTI9_5_IRQHandler,Default_Handler
@@ -400,17 +372,8 @@ g_pfnVectors:
 	.weak	RTC_Alarm_IRQHandler
 	.thumb_set RTC_Alarm_IRQHandler,Default_Handler
 
-	.weak	SDMMC1_IRQHandler
-	.thumb_set SDMMC1_IRQHandler,Default_Handler
-
-	.weak	SPI3_IRQHandler
-	.thumb_set SPI3_IRQHandler,Default_Handler
-
-	.weak	TIM6_DAC_IRQHandler
-	.thumb_set TIM6_DAC_IRQHandler,Default_Handler
-
-	.weak	TIM7_IRQHandler
-	.thumb_set TIM7_IRQHandler,Default_Handler
+	.weak	TIM6_IRQHandler
+	.thumb_set TIM6_IRQHandler,Default_Handler
 
 	.weak	DMA2_Channel1_IRQHandler
 	.thumb_set DMA2_Channel1_IRQHandler,Default_Handler
@@ -436,9 +399,6 @@ g_pfnVectors:
 	.weak	LPTIM2_IRQHandler
 	.thumb_set LPTIM2_IRQHandler,Default_Handler	
 	
-	.weak	USB_IRQHandler
-	.thumb_set USB_IRQHandler,Default_Handler	
-	
 	.weak	DMA2_Channel6_IRQHandler
 	.thumb_set DMA2_Channel6_IRQHandler,Default_Handler	
 	
@@ -455,19 +415,10 @@ g_pfnVectors:
 	.thumb_set I2C3_EV_IRQHandler,Default_Handler	
 	
 	.weak	I2C3_ER_IRQHandler
-	.thumb_set I2C3_ER_IRQHandler,Default_Handler	
-	
-	.weak	SAI1_IRQHandler
-	.thumb_set SAI1_IRQHandler,Default_Handler
-	
-	.weak	SWPMI1_IRQHandler
-	.thumb_set SWPMI1_IRQHandler,Default_Handler
+	.thumb_set I2C3_ER_IRQHandler,Default_Handler
 	
 	.weak	TSC_IRQHandler
 	.thumb_set TSC_IRQHandler,Default_Handler
-	
-	.weak	LCD_IRQHandler
-	.thumb_set LCD_IRQHandler,Default_Handler
 	
 	.weak	RNG_IRQHandler
 	.thumb_set RNG_IRQHandler,Default_Handler

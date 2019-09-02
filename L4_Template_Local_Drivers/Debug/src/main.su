@@ -1,1 +1,2 @@
-main.c:12:5:main	4	static
+stm32l4xx_ll_gpio.h:389:26:LL_GPIO_GetPinOutputType	24	static
+main.c:13:5:main	8	static
